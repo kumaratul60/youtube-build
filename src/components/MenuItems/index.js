@@ -1,12 +1,7 @@
 import React from "react";
 
 const MenuItems = () => {
-  return (
-    <>
-      MenuItems
-    
-    </>
-  );
+  return <>MenuItems</>;
 };
 
 export default MenuItems;
