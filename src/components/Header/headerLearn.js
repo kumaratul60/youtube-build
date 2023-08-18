@@ -1,63 +1,83 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   HAMBURGER_MENU,
   YOUTUBE_LOGO,
   USER_ICON,
   SEARCH_ICON,
 } from "../../constants/constant";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toggleMenu } from "../../utils/slices/appSlice";
 import { Link } from "react-router-dom";
 import { YOUTUBE_SEARCH_API } from "../../config/constantAPI";
-import { cacheResults } from "../../utils/slices/searchSlice";
+import { debounce } from "../../utils/debounce";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
-  const dispatch = useDispatch();
+  const cachedResults = useMemo(() => {
+    return {}; // Initial cache object
+  }, []);
 
-  const searchCache = useSelector((store) => store.search);
-  // console.log({ searchCache });
+  // useEffect(() => {
+  //   let isCancelled = false;
 
-  /****
-  searchCache = {
-    "moto":["moto+","motoG40","motoFusion"]
-  };
-  searchQuery = moto
-  */
+  //   const fetchSearchResults = async function () {
+  //     if (!searchQuery) return;
+
+  //     const getSearchResults = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+
+  //     if (!isCancelled) {
+  //       const getSearchJson = await getSearchResults.json();
+
+  //       console.log({ getSearchJson });
+  //     }
+  //   };
+
+  //   const debounceFetch = debounce(fetchSearchResults, 200);
+  //   debounceFetch();
+
+  //   return () => {
+  //     isCancelled = true;
+  //   };
+  // }, [searchQuery]);
+
+  // optimize way
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (searchCache[searchQuery]) {
-        setSearchResults(searchCache[searchQuery]);
-      } else {
-        fetchSearchResults();
+    const fetchSearchResults = async () => {
+      if (!searchQuery) {
+        setSearchResults([]);
+        return;
       }
-    }, 200);
+
+      if (cachedResults[searchQuery]) {
+        setSearchResults(cachedResults[searchQuery]);
+        return;
+      }
+
+      // console.log({ searchQuery });
+
+      const getSearchResults = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+
+      const getSearchJson = await getSearchResults.json();
+
+      setSearchResults(getSearchJson[1]);
+
+      // Update the cache with new results
+      cachedResults[searchQuery] = getSearchJson[1];
+    };
+
+    // debounce concept
+    const timer = setTimeout(() => fetchSearchResults(), 200);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [searchQuery]);
+  }, [searchQuery, cachedResults]);
 
-  const fetchSearchResults = async () => {
-    // console.log({ searchQuery });
-
-    const getSearchResults = await fetch(YOUTUBE_SEARCH_API + searchQuery);
-
-    const getSearchJson = await getSearchResults.json();
-
-    setSearchResults(getSearchJson[1]);
-
-    // if searchQuery not present in searchCache then update the searchCache with new results
-    dispatch(
-      cacheResults({
-        [searchQuery]: getSearchJson[1],
-      })
-    );
-  };
+  const dispatch = useDispatch();
 
   const hamburgerMenuHandler = () => {
     dispatch(toggleMenu());

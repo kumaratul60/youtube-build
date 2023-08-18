@@ -12,3 +12,109 @@ export const GOOGLE_LOGO =
 
 export const SEARCH_ICON =
   "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png";
+
+export const CommentData = [
+  {
+    name: "Rax",
+    text: "lorem ipsum text any other",
+    reply: [
+      {
+        name: "hax",
+        text: "lorem ipsum text any other",
+        reply: [
+          {
+            name: "Atul",
+            text: "lorem ipsum text any other",
+            reply: [
+              {
+                name: "Atul",
+                text: "lorem ipsum text any other",
+                reply: [
+                  {
+                    name: "Atul",
+                    text: "lorem ipsum text any other",
+                    reply: [
+                      {
+                        name: "Atul",
+                        text: "lorem ipsum text any other",
+                        reply: [
+                          {
+                            name: "Atul",
+                            text: "lorem ipsum text any other",
+                            reply: [],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Max",
+    text: "lorem ipsum text any other",
+    reply: [
+      {
+        name: "Atul",
+        text: "lorem ipsum text any other",
+        reply: [],
+      },
+    ],
+  },
+  {
+    name: "Tax",
+    text: "lorem ipsum text any other",
+    reply: [
+      {
+        name: "Atul",
+        text: "lorem ipsum text any other",
+        reply: [
+          {
+            name: "Atul",
+            text: "lorem ipsum text any other",
+            reply: [
+              {
+                name: "Atul",
+                text: "lorem ipsum text any other",
+                reply: [
+                  {
+                    name: "Atul",
+                    text: "lorem ipsum text any other",
+                    reply: [],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Vax",
+    text: "lorem ipsum text any other",
+    reply: [
+      {
+        name: "Atul",
+        text: "lorem ipsum text any other",
+        reply: [
+          {
+            name: "Atul",
+            text: "lorem ipsum text any other",
+            reply: [],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Cax",
+    text: "lorem ipsum text any other",
+    reply: [],
+  },
+];

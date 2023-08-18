@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { YOUTUBE_VIDEOS_API } from "../../config/constantAPI";
-import VideoCard from "../VideoCard";
+import VideoCard, {
+  AidVideoCard,
+  AidVideoCard2,
+  AidVideoCard2WithStyles,
+  AidVideoCardWithStyles,
+  aidVideoCard,
+} from "../VideoCard";
 import { Link } from "react-router-dom";
 
 const VideoContainer = () => {
@@ -9,6 +15,8 @@ const VideoContainer = () => {
 
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const AdPromoCard = aidVideoCard(VideoCard);
 
   useEffect(() => {
     fetchAPIData();
@@ -36,11 +44,15 @@ const VideoContainer = () => {
       ) : videos.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
           {/* <VideoCard vInfo={videos[0]} /> */}
+          <AdPromoCard vInfo={videos[0]} />
+          {/* <AidVideoCard vInfo={videos[1]} />
+          <AidVideoCard2 vInfo={videos[2]} />
+          <AidVideoCardWithStyles vInfo={videos[3]} /> */}
+          <AidVideoCard2WithStyles vInfo={videos[4]} />
 
           {videos.map((v) => (
             <Link to={`/watch?vt=${v.id}`} key={v.id}>
-              {" "}
-              <VideoCard vInfo={v} />{" "}
+              <VideoCard vInfo={v} />
             </Link>
           ))}
         </div>

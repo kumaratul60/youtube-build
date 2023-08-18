@@ -6,9 +6,9 @@ const closeMenu = (state) => {
   state.isMenuOpen = false;
 };
 
-const actionUtils = {
+const toggleUtils = {
   toggleMenu,
   closeMenu,
 };
 
-export default actionUtils;
+export default toggleUtils;

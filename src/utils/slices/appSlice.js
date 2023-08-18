@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import actionUtils from "../Actions";
+import toggleUtils from "../Actions/ToggleActions";
 
 const appSlice = createSlice({
   name: "collapsible-app",
@@ -7,15 +7,8 @@ const appSlice = createSlice({
     isMenuOpen: true,
   },
   reducers: {
-    // toggleMenu: (state) => {
-    //   state.isMenuOpen = !state.isMenuOpen;
-    // },
-    // closeMenu: (state) => {
-    //   state.isMenuOpen = false
-    // }
-
-    toggleMenu: actionUtils.toggleMenu,
-    closeMenu: actionUtils.closeMenu,
+    toggleMenu: toggleUtils.toggleMenu,
+    closeMenu: toggleUtils.closeMenu,
   },
 });
 
