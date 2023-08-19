@@ -2,7 +2,7 @@ import { Provider } from "react-redux";
 import "./App.css";
 import Body from "./components/Body";
 import Header from "./components/Header";
-import store from "./utils/store";
+import store from "./app/store";
 import { RouterProvider } from "react-router-dom";
 import appRouter from "./routers";
 

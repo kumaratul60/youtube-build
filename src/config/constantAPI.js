@@ -18,3 +18,5 @@ const YOUTUBE_SEARCH_XML =
 const YOUTUBE_SIDE_VIDEOS_API =
   " https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&myRating=like&key=" +
   GOOGLE_LIKE_KEY;
+
+export const OFFSET_LIVE_CHAT = 15
