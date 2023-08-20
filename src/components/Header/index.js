@@ -48,6 +48,7 @@ const Header = () => {
     const getSearchResults = await fetch(YOUTUBE_SEARCH_API + searchQuery);
 
     const getSearchJson = await getSearchResults.json();
+    // console.log({getSearchJson});
 
     setSearchResults(getSearchJson[1]);
 
@@ -61,6 +62,13 @@ const Header = () => {
 
   const hamburgerMenuHandler = () => {
     dispatch(toggleMenu());
+  };
+
+  const handleSuggestionClick = (res) => {
+    console.log("result");
+    setSearchQuery(res);
+    setSearchResults([]);
+    setShowSuggestions(false);
   };
 
   return (
@@ -84,27 +92,28 @@ const Header = () => {
       </div>
 
       <div className=" col-span-10">
-        <div className=" flex items-center justify-center ">
+        <div className=" flex items-center justify-center " >
           <input
-            className="rounded-l-full p-2 pl-4 w-1/2 border border-sky-300 focus:outline-none focus:shadow-outline focus:border-blue-400 shadow-sm text-gray-600 placeholder-gray-500"
+            className="rounded-l-full p-2 pl-4 w-1/2 border border-sky-300 focus:outline-none focus:shadow-outline focus:border-2 focus:border-blue-500 shadow-sm text-gray-600 placeholder-gray-500"
             type="text"
             placeholder="Search"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setShowSuggestions(true)}
-            onBlur={() => setShowSuggestions(false)}
+            // onBlur={() => setShowSuggestions(false)}
           />
           <div className="rounded-r-full px-5 py-[5px] border border-gray-500 cursor-pointer bg-gray-50">
             <img className="h-6" src={SEARCH_ICON} alt="search-logo" />
           </div>
         </div>
         {showSuggestions && (
-          <div className="absolute bg-white w-full md:w-[40%] lg:w-[37%] p-3 rounded-lg py-2  mt-2 md:mt-0 md:ml-[16rem] shadow-2xl ">
+          <div className="absolute bg-white w-full md:w-[40%] lg:w-[36%] p-3 rounded-lg py-2  mt-2 md:mt-0 md:ml-[16rem] shadow-2xl ">
             {showSuggestions &&
               searchResults.map((result, i) => (
                 <div
                   key={i}
                   className="text-gray-900 font-semibold m-1 p-1 border-b flex hover:bg-gray-100 hove: rounded-lg"
+                  onClick={() => handleSuggestionClick(result)}
                 >
                   <img className="h-4" src={SEARCH_ICON} alt="search-logo" />
                   <p className="px-3">{result}</p>

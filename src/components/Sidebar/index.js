@@ -10,30 +10,32 @@ const SideBar = () => {
   if (!isMenuBarOpen) return null;
 
   return (
-    <div className="p-5 shadow-lg w-48">
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
+    <div className="p-5 shadow-lg w-48 bg-white rounded-lg">
+      <ul className="mb-4">
+        <li className="mb-2">
+          <Link to="/" className="text-blue-500 hover:underline">
+            Home
+          </Link>
         </li>
-        <li>Shorts</li>
-        <li>Videos</li>
-        <li>Live</li>
+        <li className="mb-2">Shorts</li>
+        <li className="mb-2">Videos</li>
+        <li className="mb-2">Live</li>
       </ul>
 
-      <p className=" pt-5 font-bold">Subscriptions</p>
-      <ul>
-        <li>Music</li>
-        <li>Videos</li>
-        <li>Games</li>
-        <li>Movies</li>
+      <p className="pt-5 font-bold text-gray-700 py-2">Subscriptions</p>
+      <ul className="mb-4 ">
+        <li className="mb-2">Music</li>
+        <li className="mb-2">Videos</li>
+        <li className="mb-2">Games</li>
+        <li className="mb-2">Movies</li>
       </ul>
 
-      <p className=" pt-5 font-bold">Watch Later</p>
+      <p className="pt-5 font-bold text-gray-700 py-2">Watch Later</p>
       <ul>
-        <li>Music</li>
-        <li>Videos</li>
-        <li>Games</li>
-        <li>Movies</li>
+        <li className="mb-2">Music</li>
+        <li className="mb-2">Videos</li>
+        <li className="mb-2">Games</li>
+        <li className="mb-2">Movies</li>
       </ul>
     </div>
   );

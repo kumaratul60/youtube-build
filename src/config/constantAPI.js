@@ -15,8 +15,5 @@ export const YOUTUBE_SEARCH_API =
 const YOUTUBE_SEARCH_XML =
   "https://suggestqueries.google.com/complete/search?output=toolbar&hl=en&q=";
 
-const YOUTUBE_SIDE_VIDEOS_API =
-  " https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&myRating=like&key=" +
-  GOOGLE_LIKE_KEY;
 
-export const OFFSET_LIVE_CHAT = 15
+export const OFFSET_LIVE_CHAT = 15;
