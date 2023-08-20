@@ -65,7 +65,6 @@ const Header = () => {
   };
 
   const handleSuggestionClick = (res) => {
-    console.log("result");
     setSearchQuery(res);
     setSearchResults([]);
     setShowSuggestions(false);
