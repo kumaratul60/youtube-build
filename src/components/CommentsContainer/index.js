@@ -1,5 +1,4 @@
 import { CommentData } from "../../constants/constant";
-import Comment from "./Comment";
 import CommentList from "./CommentList";
 
 const CommentsContainer = () => {

@@ -20,3 +20,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Nested comments
 - side Video card panel
 - `LIVE CHAT` system on watch page, user can do live Anonymous chat used here `API Polling method`
+- Shimmer UI effect
+- Toggle to Read more large description
