@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   HAMBURGER_MENU,
   YOUTUBE_LOGO,
   USER_ICON,
   SEARCH_ICON,
 } from "../../constants/constant";
-import { useDispatch, useSelector } from "react-redux";
+
 import { toggleMenu } from "../../utils/slices/appSlice";
-import { Link } from "react-router-dom";
 import { YOUTUBE_SEARCH_API } from "../../config/constantAPI";
 import { cacheResults } from "../../utils/slices/searchSlice";
 

@@ -1,6 +1,5 @@
 import { Provider } from "react-redux";
 import "./App.css";
-import Body from "./components/Body";
 import Header from "./components/Header";
 import store from "./app/store";
 import { RouterProvider } from "react-router-dom";
@@ -17,14 +16,3 @@ function App() {
 
 export default App;
 
-/****
- Header
- Body
-  Sidebar
-    MenuItems
-  MainContainer
-    ButtonList
-    VideoContainer
-      VideoCard
- Footer
-*/

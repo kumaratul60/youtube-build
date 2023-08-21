@@ -1,52 +1,86 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { closeMenu } from "../../utils/slices/appSlice";
 import { useSearchParams } from "react-router-dom";
+import ReactPlayer from "react-player";
+
 import CommentsContainer from "../CommentsContainer";
 import SideVideo from "./SideVideoContainer";
 import LiveChat from "../LiveChat";
+import VideoStates from "./VideoStats";
+import VideoStatsSkeleton from "../Shimmer/VideoStatsSkeleton";
+
+import { YOUTUBE_VIDEOS_API } from "../../config/constantAPI";
+import { closeMenu } from "../../utils/slices/appSlice";
 
 const WatchPage = () => {
   const dispatch = useDispatch();
+  const [watchVideo, setWatchVideo] = useState([]);
 
-  //    not using useParams here, because we get params in the queryParam way so by using it we will get an  empty object, useParam will work on /something/id:656.
-
+  // const { itemId } = useParams(); Use the itemId to fetch and display the item details.
+  // Use the itemId to fetch and display the item details
   //  so when you've queryParams (/watch?vt=${v.id}) in the url so use useSearchParams hooks
 
+  // The useSearchParams hook is used to access and manipulate query parameters in the URL. Query parameters are used to pass additional information to a page, often in the form of key-value pairs
+
   const [searchParams] = useSearchParams();
-  //   console.log(searchParams.get("vt"));
 
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(closeMenu());
   }, [dispatch]);
 
-  return (
-    <div className="flex">
-      <div>
-        <div className="p-2 m-2">
-          <iframe
-            width="1000"
-            height="520"
-            src={`https://www.youtube.com/embed/${searchParams.get("vt")}?autoplay=1`}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-        </div>
-        <div>
-          <CommentsContainer />
-        </div>
-      </div>
+  useEffect(() => {
+    fetchWatchAPIData();
+  }, []);
+  const fetchWatchAPIData = async () => {
+    try {
+      const getData = await fetch(YOUTUBE_VIDEOS_API);
+      const response = await getData.json();
 
-      <div>
-        <div>
-          <LiveChat />
+      if (response?.items) {
+        setWatchVideo(response.items);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  const filteredWatchVideo = watchVideo.filter(
+    (v) => v.id === searchParams.get("vt")
+  );
+
+  return (
+    <div className="grid grid-cols-12 gap-0">
+      <div className="col-span-12 sm:col-span-9">
+        <div className="p-2 m-2">
+          <ReactPlayer
+            url={`https://www.youtube.com/watch?v=${searchParams.get("vt")}`}
+            width="100%"
+            height="520px"
+            controls
+            config={{
+              youtube: {
+                playerVars: {
+                  autoplay: 1,
+                },
+              },
+            }}
+          />
         </div>
-        <div className="mt-5">
-          <SideVideo />
-        </div>
+        {filteredWatchVideo.length === 0 ? (
+          <div className="m-auto">
+            <VideoStatsSkeleton />
+          </div>
+        ) : (
+          <div>
+            <VideoStates statsInfo={filteredWatchVideo[0]} />
+            <CommentsContainer />
+          </div>
+        )}
+      </div>
+      <div className="col-span-12 sm:col-span-3">
+        <LiveChat />
+        <SideVideo />
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { YOUTUBE_VIDEOS_API } from "../../../config/constantAPI";
 import VideoCard from "../../VideoCard";
+import Spinner from "../../Spinner";
 
 const SideVideo = () => {
   const [sideVideo, setSideVideo] = useState([]);
@@ -28,24 +29,24 @@ const SideVideo = () => {
   };
 
   return (
-    <div className=" m-2 px-10 ">
-      <>
-        {isSideVideoLoading ? (
-          <p className=" m-auto text-lg text-gray-600">Loading...</p>
-        ) : sideVideo.length > 0 ? (
-          <div className=" ">
-            {sideVideo.map((v) => (
-              <Link to={`/watch?vt=${v.id}`} key={v.id}>
-                <VideoCard vInfo={v} />
-              </Link>
-            ))}
-          </div>
-        ) : (
-          <p className=" m-auto text-lg text-gray-600">
-            No videos available currently.
-          </p>
-        )}
-      </>
+    <div className="mt-5 m-2 px-4 md:px-4 lg:px-6 ">
+      {isSideVideoLoading ? (
+        <>
+          <Spinner />
+        </>
+      ) : sideVideo.length > 0 ? (
+        <div className="grid grid-cols-3 gap-4 md:grid-cols-2 lg:grid-cols-1">
+          {sideVideo.map((v) => (
+            <Link to={`/watch?vt=${v.id}`} key={v.id}>
+              <VideoCard vInfo={v} />
+            </Link>
+          ))}
+        </div>
+      ) : (
+        <p className=" m-auto text-lg text-gray-600">
+          No videos available currently.
+        </p>
+      )}
     </div>
   );
 };

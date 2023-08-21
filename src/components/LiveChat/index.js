@@ -36,8 +36,8 @@ const LiveChat = () => {
 
   return (
     <>
-      <div className="flex mt-4 items-center justify-center flex-col border border-gray-400 shadow-xl rounded-lg bg-slate-100">
-        <div className="p-3 h-[450px] overflow-y-scroll flex flex-col-reverse">
+      <div className="flex mt-4 mr-1 items-center justify-center flex-col border border-gray-400 shadow-xl rounded-lg bg-slate-100">
+        <div className="p-3 max-h-[450px] overflow-y-scroll flex flex-col-reverse w-full">
           {getMessages.map((chat) => (
             <ChatMessage
               key={chat.id}
@@ -49,17 +49,17 @@ const LiveChat = () => {
 
         <form
           onSubmit={handleChatSubmit}
-          className="flex w-full mb-4 items-center p-2"
+          className="flex flex-col sm:flex-row w-full mb-4 p-2"
         >
           <input
-            className="flex-grow px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1"
+            className="flex-grow px-3 py-2 mb-2 sm:mb-0  border  border-gray-300 rounded-lg focus:outline-none focus:ring-1"
             placeholder="Type your message..."
             type="text"
             value={inputChat}
             onChange={(e) => setInputChat(e.target.value)}
           />
           <button
-            className="px-4 py-2 ml-2 bg-green-400 rounded-lg text-white font-semibold "
+            className="w-full sm:w-auto px-4 py-2 ml-2 bg-green-400 rounded-lg text-white font-semibold "
             onClick={handleChatSubmit}
           >
             Send
