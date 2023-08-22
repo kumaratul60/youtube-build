@@ -62,7 +62,7 @@ const LiveChat = () => {
 
         <form
           onSubmit={handleChatSubmit}
-          className="flex flex-col sm:flex-row w-full mb-4 p-2"
+          className="flex flex-col justify-center sm:flex-wrap   sm:flex-row w-full mb-4 p-2"
         >
           <input
             className="flex-grow px-3 py-2 mb-2 sm:mb-0  border  border-gray-300 rounded-lg focus:outline-none focus:ring-1"
@@ -72,7 +72,7 @@ const LiveChat = () => {
             onChange={(e) => setInputChat(e.target.value)}
           />
           <button
-            className="w-full sm:w-auto px-4 py-2 ml-2 bg-green-400 rounded-lg text-white font-semibold "
+            className="w-full sm:w-auto px-4 py-2 ml-2  lg:my-0 sm:my-2 bg-green-400 rounded-lg text-white font-semibold "
             onClick={handleChatSubmit}
           >
             Send

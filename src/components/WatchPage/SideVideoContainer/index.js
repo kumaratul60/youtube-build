@@ -35,7 +35,7 @@ const SideVideo = () => {
           <Spinner />
         </>
       ) : sideVideo.length > 0 ? (
-        <div className="grid grid-cols-3 gap-4 md:grid-cols-2 lg:grid-cols-1">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-1">
           {sideVideo.map((v) => (
             <Link to={`/watch?vt=${v.id}`} key={v.id}>
               <VideoCard vInfo={v} />
