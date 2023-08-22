@@ -101,7 +101,7 @@ const Header = () => {
             onFocus={() => setShowSuggestions(true)}
             // onBlur={() => setShowSuggestions(false)}
           />
-          <div className="rounded-r-full px-5 py-[5px] border border-gray-500 cursor-pointer bg-gray-50">
+          <div className="rounded-r-full px-5 py-[5px]  sm:py-[6px] border border-gray-500 cursor-pointer bg-gray-50">
             <img className="h-6" src={SEARCH_ICON} alt="search-logo" />
           </div>
         </div>

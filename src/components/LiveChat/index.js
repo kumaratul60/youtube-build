@@ -23,7 +23,7 @@ const LiveChat = () => {
       dispatch(
         addMessage({
           name: generateRandomName(),
-          message: makeRandomStr(28),
+          message: makeRandomStr(22),
           img: `${BASE_IMAGE_URL}${updatedRandomNumber}.jpg`,
         })
       );
@@ -48,7 +48,7 @@ const LiveChat = () => {
 
   return (
     <>
-      <div className="flex mt-4 mr-10 items-center justify-center flex-col border border-gray-400 shadow-xl rounded-lg bg-slate-100">
+      <div className="flex mt-4 p-2 mr-10 md: ml-10 sm:ml-10 h-[520px] items-center  flex-col border border-gray-400 shadow-xl rounded-lg bg-slate-100">
         <div className="p-3 max-h-[450px] overflow-y-scroll overflow-x-hidden flex flex-col-reverse w-full">
           {getMessages.map((chat) => (
             <ChatMessage
@@ -62,10 +62,10 @@ const LiveChat = () => {
 
         <form
           onSubmit={handleChatSubmit}
-          className="flex flex-col justify-center sm:flex-wrap   sm:flex-row w-full mb-4 p-2"
+          className="  flex flex-col sm:flex-wrap   sm:flex-row w-full  p-2"
         >
           <input
-            className="flex-grow px-3 py-2 mb-2 sm:mb-0  border  border-gray-300 rounded-lg focus:outline-none focus:ring-1"
+            className=" flex-grow px-3  py-2 mb-2 sm:mb-0  border  border-gray-300 rounded-lg focus:outline-none focus:ring-1"
             placeholder="Type your message..."
             type="text"
             value={inputChat}
