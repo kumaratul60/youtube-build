@@ -3,19 +3,28 @@ import ChatMessage from "../ChatMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { addMessage } from "../../utils/slices/chatSlice";
 import { generateRandomName, makeRandomStr } from "../../helper/mockNames";
+import { generateRandomThreeDigitNumber } from "../../utils/commonFn";
+import { BASE_IMAGE_URL } from "../../config/constantAPI";
 
 const LiveChat = () => {
   const [inputChat, setInputChat] = useState("");
+  const [randomThreeDigitNumber, setRandomThreeDigitNumber] = useState(312);
+
   const dispatch = useDispatch();
   const getMessages = useSelector((store) => store.liveChat.messages);
 
   useEffect(() => {
     const timer = setInterval(() => {
       // API Polling
+
+      const updatedRandomNumber = generateRandomThreeDigitNumber();
+      setRandomThreeDigitNumber(updatedRandomNumber);
+
       dispatch(
         addMessage({
           name: generateRandomName(),
-          message: makeRandomStr(22),
+          message: makeRandomStr(28),
+          img: `${BASE_IMAGE_URL}${updatedRandomNumber}.jpg`,
         })
       );
     }, 1500);
@@ -25,24 +34,28 @@ const LiveChat = () => {
 
   const handleChatSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      addMessage({
-        name: "you",
-        message: inputChat,
-      })
-    );
+    if (inputChat.trim() !== "") {
+      dispatch(
+        addMessage({
+          name: "you",
+          message: inputChat,
+          img: `${BASE_IMAGE_URL}${randomThreeDigitNumber}.jpg`,
+        })
+      );
+    }
     setInputChat("");
   };
 
   return (
     <>
-      <div className="flex mt-4 mr-1 items-center justify-center flex-col border border-gray-400 shadow-xl rounded-lg bg-slate-100">
-        <div className="p-3 max-h-[450px] overflow-y-scroll flex flex-col-reverse w-full">
+      <div className="flex mt-4 mr-10 items-center justify-center flex-col border border-gray-400 shadow-xl rounded-lg bg-slate-100">
+        <div className="p-3 max-h-[450px] overflow-y-scroll overflow-x-hidden flex flex-col-reverse w-full">
           {getMessages.map((chat) => (
             <ChatMessage
               key={chat.id}
               name={chat.name}
               message={chat.message}
+              img={chat.img}
             />
           ))}
         </div>

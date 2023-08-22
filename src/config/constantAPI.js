@@ -14,5 +14,9 @@ export const YOUTUBE_SEARCH_API =
 
 // const YOUTUBE_SEARCH_XML = "https://suggestqueries.google.com/complete/search?output=toolbar&hl=en&q=";
 
-
 export const OFFSET_LIVE_CHAT = 15;
+
+//  const originalUrl = "https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1312.jpg";
+
+export const BASE_IMAGE_URL =
+  "https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-";

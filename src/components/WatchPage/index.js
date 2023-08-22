@@ -50,8 +50,8 @@ const WatchPage = () => {
   );
 
   return (
-    <div className="grid grid-cols-12 gap-0">
-      <div className="col-span-12 sm:col-span-9">
+    <div className="grid grid-cols-12 gap-8">
+      <div className="col-span-12 sm:col-span-8">
         <div className="p-2 m-2">
           <ReactPlayer
             url={`https://www.youtube.com/watch?v=${searchParams.get("vt")}`}
@@ -78,7 +78,7 @@ const WatchPage = () => {
           </div>
         )}
       </div>
-      <div className="col-span-12 sm:col-span-3">
+      <div className="col-span-12 sm:col-span-4">
         <LiveChat />
         <SideVideo />
       </div>

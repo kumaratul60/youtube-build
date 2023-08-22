@@ -30,3 +30,9 @@ export const Statistic = ({ label, value }) => {
     </span>
   );
 };
+
+// Get Random 3 digit number
+
+export function generateRandomThreeDigitNumber() {
+  return Math.floor(Math.random() * 900) + 100; // Generates a random number between 100 and 999
+}
