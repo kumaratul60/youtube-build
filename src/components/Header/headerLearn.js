@@ -7,9 +7,7 @@ import {
 } from "../../constants/constant";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../../utils/slices/appSlice";
-import { Link } from "react-router-dom";
 import { YOUTUBE_SEARCH_API } from "../../config/constantAPI";
-import { debounce } from "../../utils/debounce";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
