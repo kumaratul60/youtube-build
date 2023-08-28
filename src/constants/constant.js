@@ -13,6 +13,47 @@ export const GOOGLE_LOGO =
 export const SEARCH_ICON =
   "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png";
 
+export const HOME_ICON =
+  "https://w7.pngwing.com/pngs/848/762/png-transparent-computer-icons-home-house-home-angle-building-rectangle-thumbnail.png";
+
+export const SHORTS_ICON =
+  "https://w7.pngwing.com/pngs/920/784/png-transparent-tiktok-youtube-short-icon-logo-social-media-youtube-logo-shorts.png";
+
+export const SUBSCRIPTION_ICON =
+  "https://cdn.icon-icons.com/icons2/3237/PNG/512/menu_youtube_social_media_subs_subscription_icon_197393.png";
+
+export const LIBRARY_ICON =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUzi5z4Eg6fOBF041mO_YXN8wSJ2K7WzeLCBugagIiJWeudVADlZwIoOgwK20gvg5WOLI&usqp=CAU";
+
+export const HISTORY_ICON =
+  "https://cdn.iconscout.com/icon/premium/png-256-thumb/history-2036561-1740215.png";
+
+export const WATCH_LATER_ICON =
+  "https://static.thenounproject.com/png/4970870-200.png";
+
+export const SHOPPING_ICON =
+  "https://www.vhv.rs/dpng/d/462-4626099_youtube-thumbnail-png-icons-kids-videos-banners-shopping.png";
+
+export const YOURVIDEO_ICON =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Cv3kluzzwRdkTKs6dfGx5pakHA2Y020qGg&usqp=CAU";
+
+export const LIKE_ICON =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9ASsR4gjmcNMWpJfj41_jfQ_r48zN4eWzrtOfanQCVod6OO1_qLRfQczJ-FEwwKo4s7U&usqp=CAU";
+
+export const TRANDING_ICON =
+  "https://icon-library.com/images/trending-icon/trending-icon-2.jpg";
+
+export const MUSIC_ICON =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWszyralqwgbOGntFnauK72qEBy-o5adoiJw&usqp=CAU";
+
+export const NEWS_ICON =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa9RX5iWc_MoK-RXezXU_ZKXpTNSDg5n_igg&usqp=CAU";
+
+export const SPORTS_ICON =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMZpUUphmOLPyc1kIHbBApEoc02-KCwTpX-i0kY2hGUGJz9oD62cwC1vfcvQ3H_aepSos&usqp=CAU";
+
+// export const NOTIFICATION_ICON =
+
 export const CommentData = [
   {
     name: "Rax",

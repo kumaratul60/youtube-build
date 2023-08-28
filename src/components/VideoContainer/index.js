@@ -87,7 +87,7 @@ const VideoContainer = () => {
           <Spinner />
         </>
       ) : videos.length > 0 ? (
-        <div className="grid grid-cols-3  sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-4 ">
+        <div className="grid grid-cols-3  sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-4  ">
           <AdPromoCard vInfo={videos[0]} />
 
           <AidVideoCard2WithStyles vInfo={videos[4]} />
@@ -95,7 +95,7 @@ const VideoContainer = () => {
           {videos.map(renderVideoCard)}
         </div>
       ) : (
-        <p className=" m-auto text-lg text-gray-600">
+        <p className="m-auto text-lg text-gray-600">
           No videos available currently.
         </p>
       )}

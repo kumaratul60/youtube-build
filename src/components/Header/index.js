@@ -90,8 +90,8 @@ const Header = () => {
         </a>
       </div>
 
-      <div className=" col-span-10">
-        <div className=" flex items-center justify-center " >
+      <div className=" col-span-10 ">
+        <div className=" flex items-center justify-center ">
           <input
             className="rounded-l-full p-2 pl-4 w-1/2 border border-sky-300 focus:outline-none focus:shadow-outline focus:border-2 focus:border-blue-500 shadow-sm text-gray-600 placeholder-gray-500"
             type="text"
@@ -101,7 +101,7 @@ const Header = () => {
             onFocus={() => setShowSuggestions(true)}
             // onBlur={() => setShowSuggestions(false)}
           />
-          <div className="rounded-r-full px-5 py-[5px]  sm:py-[6px] border border-gray-500 cursor-pointer bg-gray-50">
+          <div className="rounded-r-full px-5 py-[5px] border border-gray-500 cursor-pointer bg-gray-50">
             <img className="h-6" src={SEARCH_ICON} alt="search-logo" />
           </div>
         </div>
