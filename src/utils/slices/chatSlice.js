@@ -13,7 +13,7 @@ const chatSlice = createSlice({
         id: nanoid(), // Generate a unique ID
         message: action.payload.message,
         name: action.payload.name,
-        img:action.payload.img
+        img: action.payload.img,
       };
       state.messages.splice(OFFSET_LIVE_CHAT, 1);
       state.messages.unshift(newMessage);
