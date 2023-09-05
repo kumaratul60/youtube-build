@@ -1,14 +1,24 @@
 import React from "react";
-import { Statistic, formatDate } from "../../utils/commonFn";
+import {
+  Statistic,
+  formatDateDifference,
+  formatDurationToTime,
+} from "../../utils/commonFn";
 
 const VideoCard = ({ vInfo }) => {
-  const { snippet, statistics } = vInfo;
+  const { snippet, statistics, contentDetails } = vInfo;
   const { channelTitle, publishedAt, thumbnails, title } = snippet;
   const { viewCount } = statistics;
+  const duration = contentDetails?.duration;
 
   return (
-    <div className="video-card p-4 m-2 w-72  bg-white shadow-md rounded-md">
+    <div className="relative video-card p-4 m-2 w-72  bg-white shadow-md rounded-md">
       <img className="rounded-lg" src={thumbnails.medium.url} alt="thumbnail" />
+
+      <span className="absolute top-[8.5rem] right-[1.5rem] rounded-sm  bg-black text-white font-semibold ">
+        {formatDurationToTime(duration)}
+      </span>
+
       <div className="mt-2">
         <p className="font-bold text-lg text-ellipsis overflow-hidden">
           {title}
@@ -16,8 +26,10 @@ const VideoCard = ({ vInfo }) => {
         <p className="font-semibold text-sm">{channelTitle}</p>
       </div>
 
-      <div className="flex justify-between">
-        <p className="text-gray-500 text-sm">{formatDate(publishedAt)}</p>
+      <div className="flex justify-between mt-2">
+        <p className="text-gray-600  text-md">
+          {formatDateDifference(publishedAt)}
+        </p>
         <Statistic label="Views" value={viewCount} />
       </div>
     </div>

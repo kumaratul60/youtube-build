@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Statistic, formatDate } from "../../../utils/commonFn";
+import { Statistic, formatDateDifference } from "../../../utils/commonFn";
 
 const VideoStates = ({ statsInfo }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
@@ -31,14 +31,16 @@ const VideoStates = ({ statsInfo }) => {
 
           <span className="font-semibold text-sm">{channelTitle}</span>
         </div>
-        <div className="mt-2 space-x-5">
+        <div className="mt-2 space-x-5 pr-5">
           <Statistic label="Views" value={viewCount} />
           <Statistic label="Comments" value={commentCount} />
           <Statistic label="Likes" value={likeCount} />
         </div>
       </div>
       <div className="flex flex-col">
-        <p className="text-gray-500 text-sm">{formatDate(publishedAt)}</p>
+        <p className="text-gray-500 text-sm">
+          {formatDateDifference(publishedAt)}
+        </p>
         <p className="text-gray-700 text-sm ">
           {truncatedDescription}{" "}
           {description.length > MAX_DESCRIPTION_LENGTH && (

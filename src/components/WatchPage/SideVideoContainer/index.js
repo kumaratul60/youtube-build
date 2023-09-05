@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { YOUTUBE_VIDEOS_API } from "../../../config/constantAPI";
-import VideoCard from "../../VideoCard";
 import Spinner from "../../Spinner";
+import SideCard from "../SideCard";
 
 const SideVideo = () => {
   const [sideVideo, setSideVideo] = useState([]);
@@ -38,7 +38,7 @@ const SideVideo = () => {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-1">
           {sideVideo.map((v) => (
             <Link to={`/watch?vt=${v.id}`} key={v.id}>
-              <VideoCard vInfo={v} />
+              <SideCard sideVideoInfo={v} />
             </Link>
           ))}
         </div>
