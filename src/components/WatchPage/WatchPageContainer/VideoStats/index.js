@@ -58,7 +58,7 @@ const VideoStates = ({ statsInfo }) => {
               className="text-blue-600 text-md font-semibold hover:underline  hover:text-pink-600 transition-colors duration-300 focus:outline-none"
               onClick={toggleDescription}
             >
-              {showFullDescription ? "" : "Read more"}
+              {showFullDescription ? "Hide" : "Read more"}
             </button>
           )}
         </p>

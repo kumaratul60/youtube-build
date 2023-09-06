@@ -26,4 +26,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Add Infinite scroll on home page to show pagination data
 - Add scroll to top button on home page to move smooth on the top
 - Get specific video **Channel info** by clicking on **channel Name**
+- Get specific video top level **comments**
 - Mobile responsive
