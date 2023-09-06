@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CHANNEL_API } from "../config/constantAPI";
+import { CHANNEL_API, CHANNEL_API_KEY } from "../config/constantAPI";
 
 const useChannelDetails = (channelId) => {
   const [channel, setChannel] = useState(null);
@@ -8,7 +8,7 @@ const useChannelDetails = (channelId) => {
   }, []);
 
   const getChannelDetails = async () => {
-    const url = `${CHANNEL_API}${channelId}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`;
+    const url = `${CHANNEL_API}${channelId}&key=${CHANNEL_API_KEY}`;
     const options = {
       method: "GET",
     };
