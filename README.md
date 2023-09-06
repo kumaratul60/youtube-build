@@ -20,7 +20,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Nested comments
 - Side Video card panel
 - `LIVE CHAT` system on watch page, user can do live Anonymous chat used here `API Polling method`
+- Live chat hide & show toggling
 - Shimmer UI effect
 - Toggle to Read more large description
 - Add Infinite scroll on home page to show pagination data
 - Add scroll to top button on home page to move smooth on the top
+- Get specific video **Channel info** by clicking on **channel Name**
+- Mobile responsive
