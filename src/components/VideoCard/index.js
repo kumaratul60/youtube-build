@@ -4,10 +4,11 @@ import {
   formatDateDifference,
   formatDurationToTime,
 } from "../../utils/commonFn";
+import { Link } from "react-router-dom";
 
 const VideoCard = ({ vInfo }) => {
   const { snippet, statistics, contentDetails } = vInfo;
-  const { channelTitle, publishedAt, thumbnails, title } = snippet;
+  const { channelTitle, publishedAt, thumbnails, title, channelId } = snippet;
   const { viewCount } = statistics;
   const duration = contentDetails?.duration;
 
@@ -23,7 +24,10 @@ const VideoCard = ({ vInfo }) => {
         <p className="font-bold text-lg text-ellipsis overflow-hidden">
           {title}
         </p>
-        <p className="font-semibold text-sm">{channelTitle}</p>
+
+        <Link to={`/channel/${channelId}`}>
+          <p className="font-semibold text-sm">{channelTitle}</p>
+        </Link>
       </div>
 
       <div className="flex justify-between mt-2">

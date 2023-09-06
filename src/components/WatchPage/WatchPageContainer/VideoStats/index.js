@@ -1,13 +1,22 @@
 import React, { useState } from "react";
-import { Statistic, formatDateDifference } from "../../../utils/commonFn";
+import { Statistic, formatDateDifference } from "../../../../utils/commonFn";
+import { Link } from "react-router-dom";
 
 const VideoStates = ({ statsInfo }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
+  // console.log({statsInfo});
   const { snippet, statistics } = statsInfo;
-  const { channelTitle, description, publishedAt, thumbnails, title } = snippet;
-
+  const {
+    channelTitle,
+    description,
+    publishedAt,
+    thumbnails,
+    title,
+    channelId,
+  } = snippet;
   const { viewCount, commentCount, likeCount } = statistics;
   const MAX_DESCRIPTION_LENGTH = 150;
+
   const toggleDescription = () => {
     setShowFullDescription(!showFullDescription);
   };
@@ -28,8 +37,9 @@ const VideoStates = ({ statsInfo }) => {
             src={thumbnails.default.url}
             alt="thumbnail"
           />
-
-          <span className="font-semibold text-sm">{channelTitle}</span>
+          <Link to={`/channel/${channelId}`}>
+            <span className="font-bold text-md">{channelTitle}</span>
+          </Link>
         </div>
         <div className="mt-2 space-x-5 pr-5">
           <Statistic label="Views" value={viewCount} />
@@ -38,7 +48,7 @@ const VideoStates = ({ statsInfo }) => {
         </div>
       </div>
       <div className="flex flex-col">
-        <p className="text-gray-500 text-sm">
+        <p className="text-slate-900 font-semibold text-md">
           {formatDateDifference(publishedAt)}
         </p>
         <p className="text-gray-700 text-sm ">

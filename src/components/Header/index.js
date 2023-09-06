@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import {
   HAMBURGER_MENU,
   YOUTUBE_LOGO,
@@ -7,68 +5,18 @@ import {
   SEARCH_ICON,
 } from "../../constants/constant";
 
-import { toggleMenu } from "../../utils/slices/appSlice";
-import { YOUTUBE_SEARCH_API } from "../../config/constantAPI";
-import { cacheResults } from "../../utils/slices/searchSlice";
+import useHeader from "../../hooks/useHeader";
 
 const Header = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
-  const [showSuggestions, setShowSuggestions] = useState(false);
-
-  const dispatch = useDispatch();
-
-  const searchCache = useSelector((store) => store.search);
-  // console.log({ searchCache });
-
-  /****
-  searchCache = {
-    "moto":["moto+","motoG40","motoFusion"]
-  };
-  searchQuery = moto
-  */
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (searchCache[searchQuery]) {
-        setSearchResults(searchCache[searchQuery]);
-      } else {
-        fetchSearchResults();
-      }
-    }, 200);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [searchQuery]);
-
-  const fetchSearchResults = async () => {
-    // console.log({ searchQuery });
-
-    const getSearchResults = await fetch(YOUTUBE_SEARCH_API + searchQuery);
-
-    const getSearchJson = await getSearchResults.json();
-    // console.log({getSearchJson});
-
-    setSearchResults(getSearchJson[1]);
-
-    // if searchQuery not present in searchCache then update the searchCache with new results
-    dispatch(
-      cacheResults({
-        [searchQuery]: getSearchJson[1],
-      })
-    );
-  };
-
-  const hamburgerMenuHandler = () => {
-    dispatch(toggleMenu());
-  };
-
-  const handleSuggestionClick = (res) => {
-    setSearchQuery(res);
-    setSearchResults([]);
-    setShowSuggestions(false);
-  };
+  const {
+    searchQuery,
+    searchResults,
+    showSuggestions,
+    hamburgerMenuHandler,
+    handleSuggestionClick,
+    handleSearchQueryChange,
+    handleShowSuggestions,
+  } = useHeader();
 
   return (
     <div className="grid grid-flow-col p-2 m-2 shadow-lg">
@@ -97,11 +45,11 @@ const Header = () => {
             type="text"
             placeholder="Search"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onFocus={() => setShowSuggestions(true)}
+            onChange={handleSearchQueryChange}
+            onFocus={handleShowSuggestions}
             // onBlur={() => setShowSuggestions(false)}
           />
-          <div className="rounded-r-full px-5 py-[5px] border border-gray-500 cursor-pointer bg-gray-50">
+          <div className="rounded-r-full px-5 py-[8px]  md:py-[5px] border border-gray-500 cursor-pointer bg-gray-50">
             <img className="h-6" src={SEARCH_ICON} alt="search-logo" />
           </div>
         </div>

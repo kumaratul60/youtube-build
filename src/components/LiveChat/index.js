@@ -17,7 +17,6 @@ const LiveChat = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       // API Polling
-
       const updatedRandomNumber = generateRandomThreeDigitNumber();
       setRandomThreeDigitNumber(updatedRandomNumber);
 

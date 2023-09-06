@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 import {
   Statistic,
   formatDateDifference,
   formatDurationToTime,
-} from "../../../utils/commonFn";
+} from "../../../../utils/commonFn";
 
 const SideCard = ({ sideVideoInfo }) => {
   const { snippet, statistics, contentDetails } = sideVideoInfo;
-  const { channelTitle, title, thumbnails, publishedAt } = snippet;
+  const { channelTitle, title, thumbnails, publishedAt, channelId } = snippet;
   const { viewCount } = statistics;
   const duration = contentDetails?.duration;
   return (
@@ -28,7 +29,10 @@ const SideCard = ({ sideVideoInfo }) => {
           {title}
         </div>
         <div className="text-gray-500 mt-1">
-          <p className="font-bold text-gray-600">{channelTitle}</p>
+          <Link to={`/channel/${channelId}`}>
+            <p className="font-bold text-gray-600">{channelTitle}</p>
+          </Link>
+
           <div className="text-gray-500 ml-0 md:ml-1 mt-2 flex justify-between ">
             <Statistic label="Views" value={viewCount} />
             <p className="text-gray-500 pr-5">
