@@ -1,9 +1,32 @@
-import React from 'react'
+import SearchVideoCard from "../SearchVideoCard";
+import { Link } from "react-router-dom";
+import VideoCardSkeleton from "../Shimmer/VideoCardSkeleton";
 
 const SearchPage = () => {
-  return (
-    <div>SearchPage</div>
-  )
-}
+  const storedData = JSON.parse(localStorage.getItem("searchState"));
+  const responseData = storedData ? storedData.response : null;
 
-export default SearchPage
+  const resVideoCard = responseData.items;
+
+  return (
+    <>
+      <div className="  mt-5">
+        {resVideoCard.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {resVideoCard.map((v) => (
+              <Link to={`/watch?vt=${v.id?.videoId}`} key={v.id}>
+                {<SearchVideoCard videoItem={v} /> || <VideoCardSkeleton />}
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <p className="text-lg text-gray-600">
+            No videos available currently.
+          </p>
+        )}
+      </div>
+    </>
+  );
+};
+
+export default SearchPage;

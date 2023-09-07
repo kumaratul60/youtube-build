@@ -4,15 +4,26 @@ import searchUtils from "../Actions/SearchActions";
 const searchSlice = createSlice({
   name: "search",
   initialState: {
-    currQuerySearch: null,
+    response: null,
   },
   reducers: {
     cacheResults: searchUtils.cacheResults,
-    queryResult: searchUtils.queryResult,
+    storeResponse: (state, action) => {
+      // Update state with the response data
+      const newState = {
+        ...state,
+        response: action.payload,
+      };
+
+      // Persist the state in local storage
+      localStorage.setItem("searchState", JSON.stringify(newState));
+
+      return newState;
+    },
   },
 });
 
-export const { cacheResults, queryResult } = searchSlice.actions;
+export const { cacheResults, storeResponse } = searchSlice.actions;
 
 export default searchSlice.reducer;
 

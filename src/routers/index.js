@@ -22,10 +22,10 @@ const appRouter = createBrowserRouter([
         path: "/channel/:channelId",
         element: <ChannelDetails />,
       },
-      // {
-      //   path: "/results",
-      //   element: <SearchPage />,
-      // },
+      {
+        path: "/results",
+        element: <SearchPage />,
+      },
     ],
   },
 ]);

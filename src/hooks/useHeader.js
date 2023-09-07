@@ -5,14 +5,13 @@ import {
   SEARCH_API_URL,
   YOUTUBE_SEARCH_API,
 } from "../config/constantAPI";
-import { cacheResults, queryResult } from "../utils/slices/searchSlice";
+import { cacheResults, storeResponse } from "../utils/slices/searchSlice";
 import { toggleMenu } from "../utils/slices/appSlice";
 
 const useHeader = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [suggestedResults, setSuggestedResults] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -32,6 +31,7 @@ const useHeader = () => {
         setSearchResults(searchCache[searchQuery]);
       } else {
         fetchSearchResults();
+        fetchSearchQueryResults();
       }
     }, 200);
 
@@ -58,31 +58,15 @@ const useHeader = () => {
     );
   };
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     if (searchCache[searchQuery]) {
-  //       setSearchResults(searchCache[searchQuery]);
-  //     } else {
-  //       fetchSearchQueryResults();
-  //     }
-  //   }, 200);
+  const fetchSearchQueryResults = async () => {
+    if (!searchQuery) return;
 
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, [searchQuery]);
-
-  // const fetchSearchQueryResults = async () => {
-  //   if (!searchQuery) return;
-
-  //   const searchResult = await fetch(
-  //     `${SEARCH_API_URL}${searchQuery}&key=${CHANNEL_API_KEY}`
-  //   );
-  //   const response = await searchResult.json();
-  //   console.log({ response });
-  //   dispatch(queryResult(response));
-  //   setSuggestedResults(response);
-  // };
+    const searchResult = await fetch(
+      `${SEARCH_API_URL}${searchQuery}&key=${CHANNEL_API_KEY}`
+    );
+    const response = await searchResult.json();
+    dispatch(storeResponse(response));
+  };
 
   const hamburgerMenuHandler = () => {
     dispatch(toggleMenu());
@@ -104,7 +88,6 @@ const useHeader = () => {
   return {
     searchQuery,
     searchResults,
-    suggestedResults,
     showSuggestions,
     hamburgerMenuHandler,
     handleSuggestionClick,

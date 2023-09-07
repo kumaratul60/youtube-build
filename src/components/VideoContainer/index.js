@@ -93,13 +93,13 @@ const VideoContainer = () => {
           {/* <AidVideoCard2WithStyles vInfo={videos[4]} /> */}
 
           {videos.map(renderVideoCard)}
+          <ScrollToTopButton />
         </div>
       ) : (
         <p className="m-auto text-lg text-gray-600">
           No videos available currently.
         </p>
       )}
-      <ScrollToTopButton />
     </div>
   );
 };
