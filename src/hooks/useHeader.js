@@ -65,7 +65,7 @@ const useHeader = () => {
       `${SEARCH_API_URL}${searchQuery}&key=${CHANNEL_API_KEY}`
     );
     const response = await searchResult.json();
-    console.log({ response });
+    // console.log({ response });
     dispatch(storeResponse(response));
   };
 
