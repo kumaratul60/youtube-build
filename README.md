@@ -27,4 +27,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Add scroll to top button on home page to move smooth on the top
 - Get specific video **Channel info** by clicking on **channel Name**
 - Get specific video top level **comments**
+- Get search videos by typing a head
+- Handle Custom error 404 page for error handling
 - Mobile responsive

@@ -4,6 +4,7 @@ import MainContainer from "../components/MainContainer";
 import WatchPage from "../components/WatchPage";
 import ChannelDetails from "../components/ChannelDetails";
 import SearchPage from "../components/SearchPage";
+import ErrorPage from "../components/Error";
 
 const appRouter = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const appRouter = createBrowserRouter([
         element: <SearchPage />,
       },
     ],
+    errorElement:<ErrorPage/>
   },
 ]);
 

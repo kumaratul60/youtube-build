@@ -14,6 +14,11 @@ export const VIDEO_COMMENTS_URL =
 
 export const CHANNEL_API =
   "https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=";
+  // https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=
+
+  export const YOUTUBE_HISTORY_API ="https://www.googleapis.com/youtube/v3/history?key="
+
+  export const YOUTUBE_WATCH_HISTORY_API ="https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id="
 
 export const YOUTUBE_SEARCH_API =
   "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
