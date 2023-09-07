@@ -3,6 +3,7 @@ import Body from "../components/Body";
 import MainContainer from "../components/MainContainer";
 import WatchPage from "../components/WatchPage";
 import ChannelDetails from "../components/ChannelDetails";
+import SearchPage from "../components/SearchPage";
 
 const appRouter = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const appRouter = createBrowserRouter([
         path: "/channel/:channelId",
         element: <ChannelDetails />,
       },
+      // {
+      //   path: "/results",
+      //   element: <SearchPage />,
+      // },
     ],
   },
 ]);

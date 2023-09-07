@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { YOUTUBE_SEARCH_API } from "../config/constantAPI";
-import { cacheResults } from "../utils/slices/searchSlice";
+import {
+  CHANNEL_API_KEY,
+  SEARCH_API_URL,
+  YOUTUBE_SEARCH_API,
+} from "../config/constantAPI";
+import { cacheResults, queryResult } from "../utils/slices/searchSlice";
 import { toggleMenu } from "../utils/slices/appSlice";
 
 const useHeader = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [suggestedResults, setSuggestedResults] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -53,6 +58,32 @@ const useHeader = () => {
     );
   };
 
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (searchCache[searchQuery]) {
+  //       setSearchResults(searchCache[searchQuery]);
+  //     } else {
+  //       fetchSearchQueryResults();
+  //     }
+  //   }, 200);
+
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, [searchQuery]);
+
+  // const fetchSearchQueryResults = async () => {
+  //   if (!searchQuery) return;
+
+  //   const searchResult = await fetch(
+  //     `${SEARCH_API_URL}${searchQuery}&key=${CHANNEL_API_KEY}`
+  //   );
+  //   const response = await searchResult.json();
+  //   console.log({ response });
+  //   dispatch(queryResult(response));
+  //   setSuggestedResults(response);
+  // };
+
   const hamburgerMenuHandler = () => {
     dispatch(toggleMenu());
   };
@@ -63,21 +94,22 @@ const useHeader = () => {
     setShowSuggestions(false);
   };
   const handleSearchQueryChange = (e) => {
-    setSearchQuery(e.target.value)
-  }
+    setSearchQuery(e.target.value);
+  };
 
   const handleShowSuggestions = () => {
-    setShowSuggestions(!showSuggestions)
-  }
+    setShowSuggestions(!showSuggestions);
+  };
 
   return {
     searchQuery,
     searchResults,
+    suggestedResults,
     showSuggestions,
     hamburgerMenuHandler,
     handleSuggestionClick,
     handleSearchQueryChange,
-    handleShowSuggestions
+    handleShowSuggestions,
   };
 };
 

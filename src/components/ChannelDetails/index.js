@@ -3,11 +3,19 @@ import useChannelDetails from "../../hooks/useChannelDetails";
 import { Statistic, formatDate } from "../../utils/commonFn";
 import { useEffect, useState } from "react";
 import Spinner from "../Spinner";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../../utils/slices/appSlice";
 
 const ChannelDetails = () => {
   const [loading, setLoading] = useState(true);
   const { channelId } = useParams();
   const channelStats = useChannelDetails(channelId);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    dispatch(toggleMenu());
+  }, [dispatch]);
 
   useEffect(() => {
     setTimeout(() => {

@@ -3,13 +3,16 @@ import searchUtils from "../Actions/SearchActions";
 
 const searchSlice = createSlice({
   name: "search",
-  initialState: {},
+  initialState: {
+    currQuerySearch: null,
+  },
   reducers: {
     cacheResults: searchUtils.cacheResults,
+    queryResult: searchUtils.queryResult,
   },
 });
 
-export const { cacheResults } = searchSlice.actions;
+export const { cacheResults, queryResult } = searchSlice.actions;
 
 export default searchSlice.reducer;
 

@@ -95,26 +95,6 @@ const SideBar = () => {
             <img alt="home" src={SPORTS_ICON} className="w-5 h-5" />
             Sport
           </li>
-          {/* <li className="flex gap-6">
-            <img alt="home" src="../../assets\film.png" className="w-6 h-5" />
-            Films
-          </li>
-          <li className="flex gap-6">
-            <img alt="home" src="live.png" className="w-6 h-5" />
-            Live
-          </li>
-          <li className="flex gap-6">
-            <img alt="home" src="game.png" className="w-5 h-5" />
-            Gaming
-          </li>
-          <li className="flex gap-6">
-            <img alt="home" src="bulb.png" className="w-5 h-5" />
-            Learning
-          </li>
-          <li className="flex gap-6">
-            <img alt="home" src="fashion.png" className="w-5 h-5" />
-            Fashion & beauty
-          </li> */}
         </ul>
       </div>
 
@@ -124,46 +104,9 @@ const SideBar = () => {
         <h3 className="text-lg font-medium pb-3 text-black">
           More from YouTube
         </h3>
-        {/* <ul className="flex flex-col gap-3 text-slate-700">
-          <li className="flex gap-6">
-            <img alt="home" src="yt.png" className="w-5 h-5" />
-            YouTube Premium
-          </li>
-          <li className="flex gap-6">
-            <img alt="home" src="ythex.png" className="w-5 h-5" />
-            YouTube Studio
-          </li>
-          <li className="flex gap-6">
-            <img alt="home" src="ytround.png" className="w-5 h-5" />
-            YouTube Music
-          </li>
-          <li className="flex gap-6">
-            <img alt="home" src="ytkids.png" className="w-5 h-5" />
-            YouTube Kids
-          </li>
-        </ul> */}
       </div>
 
       <div className="w-56 h-0.5 bg-slate-200"></div>
-      {/* 
-      <ul className="flex flex-col gap-3 text-slate-700">
-        <li className="flex gap-6">
-          <img alt="home" src="settings.png" className="w-5 h-5" />
-          Settings
-        </li>
-        <li className="flex gap-6">
-          <img alt="home" src="flag.png" className="w-5 h-5" />
-          Report history
-        </li>
-        <li className="flex gap-6">
-          <img alt="home" src="help.png" className="w-5 h-5" />
-          Help
-        </li>
-        <li className="flex gap-6">
-          <img alt="home" src="send.png" className="w-5 h-5" />
-          Send feedback
-        </li>
-      </ul> */}
     </div>
   );
 };

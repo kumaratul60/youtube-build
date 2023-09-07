@@ -30,7 +30,7 @@ const VideoContainer = () => {
 
       if (response?.items) {
         setVideos(response.items);
-        setNextPageToken(response.nextPageToken);
+        setNextPageToken(response?.nextPageToken);
       }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -90,7 +90,7 @@ const VideoContainer = () => {
         <div className="grid grid-cols-3  sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-4  ">
           <AdPromoCard vInfo={videos[0]} />
 
-          <AidVideoCard2WithStyles vInfo={videos[4]} />
+          {/* <AidVideoCard2WithStyles vInfo={videos[4]} /> */}
 
           {videos.map(renderVideoCard)}
         </div>

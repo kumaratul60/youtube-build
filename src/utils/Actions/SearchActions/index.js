@@ -9,8 +9,12 @@ const cacheResults = (state, action) => {
        */
 };
 
+const queryResult = (state, action) => {
+  state.currQuerySearch = action.payload;
+};
 const searchUtils = {
   cacheResults,
+  queryResult,
 };
 
 export default searchUtils;
