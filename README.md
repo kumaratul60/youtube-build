@@ -1,32 +1,32 @@
-# Getting Started with Youtube React App
+# Getting Started with YouTube React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![wakatime](https://wakatime.com/badge/user/1499525d-7f42-4e3a-b9c6-fbf14aa13712/project/76735181-b357-49ee-939b-72eb0a4081fd.svg)](https://wakatime.com/badge/user/1499525d-7f42-4e3a-b9c6-fbf14aa13712/project/76735181-b357-49ee-939b-72eb0a4081fd)
 
 ## Tech Stack
 
-- React for base setup of project
-- Redux-toolkit for store actions
+- React for the base setup of the project
+- Redux toolkit for store actions
 - React router dom for routing
 - Tailwind CSS for styles
 
 ## Features
 
-- Toggle sidebar
-- Live youtube search bar by using youtube search api
-- Reduce the api call by cache it for future use
-- Implemented Autocomplete functionality in search bar
-- Live youtube video feed by using youtube video feed api
-- Embed video play by React-player on watch page by clicking on home page listed feed videos
+- Toggle Sidebar
+- Live YouTube search bar by using YouTube search api
+- Reduce the API call by caching it for future use
+- Implemented Autocomplete functionality in the search bar
+- Live YouTube video feed by using YouTube video feed API
+- Embed video play by React-player on the watch page by clicking on the home page listed feed videos
 - Nested comments
 - Side Video card panel
-- `LIVE CHAT` system on watch page, user can do live Anonymous chat used here `API Polling method`
+- `LIVE CHAT` system on the watch page, user can do live Anonymous chat using here `API Polling method`
 - Live chat hide & show toggling
 - Shimmer UI effect
 - Toggle to Read more large description
-- Add Infinite scroll on home page to show pagination data
-- Add scroll to top button on home page to move smooth on the top
+- Add Infinite scroll on the home page to show pagination data
+- Add scroll to top button on the home page to move smoothly on the top
 - Get specific video **Channel info** by clicking on **channel Name**
-- Get specific video top level **comments**
+- Get specific video top-level **comments**
 - Get search videos by typing a head
 - Handle Custom error 404 page for error handling
 - Mobile responsive
