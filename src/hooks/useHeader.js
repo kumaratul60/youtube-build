@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  CHANNEL_API_KEY,
+  GOOGLE_API_KEY,
   SEARCH_API_URL,
   YOUTUBE_SEARCH_API,
 } from "../config/constantAPI";
@@ -62,7 +62,7 @@ const useHeader = () => {
     if (!searchQuery) return;
 
     const searchResult = await fetch(
-      `${SEARCH_API_URL}${searchQuery}&key=${CHANNEL_API_KEY}`
+      `${SEARCH_API_URL}${searchQuery}&key=${GOOGLE_API_KEY}`
     );
     const response = await searchResult.json();
     // console.log({ response });

@@ -5,15 +5,15 @@ const ErrorPage = () => {
   const getError = useRouteError();
 
   return (
-    <div className="flex flex-col items-center justify-center  mt-[50%] md:h-screen">
+    <div className="flex flex-col items-center justify-center  mt-[50%] md:mt-[12%]">
       <div className="text-red-500 text-2xl md:text-4xl font-bold mb-0 md:mb-4 animate-bounce">
         Oops, something went wrong!
       </div>
       <div className="text-gray-700 text-lg mb-4">
-        Error Status: {getError.status || 403}
+        Error Status: { getError.status || 403 }
       </div>
       <div className="text-gray-700 text-lg mb-8">
-        Error Message: {getError.statusText || 'API limit exceeded.'}
+        Error Message: { getError.statusText || 'API limit exceeded.' }
       </div>
       <div className="animate-pulse">
         <svg

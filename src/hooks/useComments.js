@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CHANNEL_API_KEY, VIDEO_COMMENTS_URL } from "../config/constantAPI";
+import { GOOGLE_API_KEY, VIDEO_COMMENTS_URL } from "../config/constantAPI";
 
 const useComments = (id) => {
   const [comments, setComments] = useState(null);
@@ -9,7 +9,7 @@ const useComments = (id) => {
   const fetchComments = async () => {
     try {
       const getData = await fetch(
-        `${VIDEO_COMMENTS_URL}${id}&key=${CHANNEL_API_KEY}`
+        `${VIDEO_COMMENTS_URL}${id}&key=${GOOGLE_API_KEY}`
       );
       const response = await getData.json();
       setComments(response);
