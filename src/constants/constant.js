@@ -34,13 +34,13 @@ export const WATCH_LATER_ICON =
 export const SHOPPING_ICON =
   "https://www.vhv.rs/dpng/d/462-4626099_youtube-thumbnail-png-icons-kids-videos-banners-shopping.png";
 
-export const YOURVIDEO_ICON =
+export const YOUR_VIDEO_ICON =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Cv3kluzzwRdkTKs6dfGx5pakHA2Y020qGg&usqp=CAU";
 
 export const LIKE_ICON =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9ASsR4gjmcNMWpJfj41_jfQ_r48zN4eWzrtOfanQCVod6OO1_qLRfQczJ-FEwwKo4s7U&usqp=CAU";
 
-export const TRANDING_ICON =
+export const TRENDING_ICON =
   "https://icon-library.com/images/trending-icon/trending-icon-2.jpg";
 
 export const MUSIC_ICON =

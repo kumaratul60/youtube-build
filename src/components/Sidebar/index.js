@@ -13,9 +13,9 @@ import {
   SHORTS_ICON,
   SPORTS_ICON,
   SUBSCRIPTION_ICON,
-  TRANDING_ICON,
+  TRENDING_ICON,
   WATCH_LATER_ICON,
-  YOURVIDEO_ICON,
+  YOUR_VIDEO_ICON,
 } from "../../constants/constant";
 
 const SideBar = () => {
@@ -27,10 +27,16 @@ const SideBar = () => {
   return (
     <div className="flex flex-col gap-5 pl-7 col-span-1 z-10">
       <ul className="flex flex-col gap-3 text-slate-700">
-        <li className="flex gap-6">
-          <img alt="home" src={HOME_ICON} className="w-5 h-5" />
-          <Link to="/"> Home</Link>
-        </li>
+        <Link to="/">
+          <li className="flex gap-6 items-center">
+            <img
+              alt="home"
+              src={HOME_ICON}
+              className="w-5 h-5 cursor-pointer"
+            />
+            <span> Home</span>
+          </li>
+        </Link>
         <li className="flex gap-6">
           <img alt="home" src={SHORTS_ICON} className="w-5 h-5" />
           Shorts
@@ -57,7 +63,7 @@ const SideBar = () => {
           History
         </li>
         <li className="flex align-middle gap-6">
-          <img alt="home" src={YOURVIDEO_ICON} className="w-5 h-5" />
+          <img alt="home" src={YOUR_VIDEO_ICON} className="w-5 h-5" />
           Your Videos
         </li>
         <li className="flex align-middle gap-6">
@@ -75,7 +81,7 @@ const SideBar = () => {
         <h3 className="text-lg font-medium text-black pb-3">Explore</h3>
         <ul className="flex flex-col gap-3 text-slate-700">
           <li className="flex gap-6">
-            <img alt="home" src={TRANDING_ICON} className="w-5 h-5" />
+            <img alt="home" src={TRENDING_ICON} className="w-5 h-5" />
             Trending
           </li>
           <li className="flex gap-6">

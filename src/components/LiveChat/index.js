@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addMessage } from "../../utils/slices/chatSlice";
 import { generateRandomName, makeRandomStr } from "../../helper/mockNames";
 import { generateRandomThreeDigitNumber } from "../../utils/commonFn";
-import { BASE_IMAGE_URL } from "../../config/constantAPI";
+import { BASE_IMAGE_URL, IMG_URL } from "../../config/constantAPI";
 
 const LiveChat = () => {
   const [inputChat, setInputChat] = useState("");
@@ -39,7 +39,8 @@ const LiveChat = () => {
         addMessage({
           name: "you",
           message: inputChat,
-          img: `${BASE_IMAGE_URL}${randomThreeDigitNumber}.jpg`,
+          // img: `${BASE_IMAGE_URL}${randomThreeDigitNumber}.jpg`,
+          img:IMG_URL
         })
       );
     }
