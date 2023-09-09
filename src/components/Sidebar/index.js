@@ -56,7 +56,7 @@ const SideBar = () => {
 
       <ul className="flex flex-col gap-3 text-slate-700">
         <Link to="/history">
-          <li className="flex align-middle gap-6">
+          <li className="flex align-middle gap-6 font-semibold">
             <img alt="home" src={HISTORY_ICON} className="w-5 h-5" />
             History
           </li>
