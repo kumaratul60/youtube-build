@@ -5,6 +5,7 @@ import WatchPage from "../components/WatchPage";
 import ChannelDetails from "../components/ChannelDetails";
 import SearchPage from "../components/SearchPage";
 import ErrorPage from "../components/Error";
+import HistoryPage from "../components/History";
 
 const appRouter = createBrowserRouter([
   {
@@ -27,8 +28,12 @@ const appRouter = createBrowserRouter([
         path: "/results",
         element: <SearchPage />,
       },
+      {
+        path: "/history",
+        element: <HistoryPage />,
+      },
     ],
-    errorElement:<ErrorPage/>
+    errorElement: <ErrorPage />,
   },
 ]);
 

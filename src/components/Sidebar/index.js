@@ -37,6 +37,7 @@ const SideBar = () => {
             <span> Home</span>
           </li>
         </Link>
+
         <li className="flex gap-6">
           <img alt="home" src={SHORTS_ICON} className="w-5 h-5" />
           Shorts
@@ -54,13 +55,15 @@ const SideBar = () => {
       <div className="w-56 h-0.5 bg-slate-200 "></div>
 
       <ul className="flex flex-col gap-3 text-slate-700">
+        <Link to="/history">
+          <li className="flex align-middle gap-6">
+            <img alt="home" src={HISTORY_ICON} className="w-5 h-5" />
+            History
+          </li>
+        </Link>
         <li className="flex align-middle gap-6">
           <img alt="home" src={LIBRARY_ICON} className="w-5 h-5" />
           Library
-        </li>
-        <li className="flex align-middle gap-6">
-          <img alt="home" src={HISTORY_ICON} className="w-5 h-5" />
-          History
         </li>
         <li className="flex align-middle gap-6">
           <img alt="home" src={YOUR_VIDEO_ICON} className="w-5 h-5" />

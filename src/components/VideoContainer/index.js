@@ -6,8 +6,11 @@ import VideoCard, { AidVideoCard2WithStyles, aidVideoCard } from "../VideoCard";
 import Spinner from "../Spinner";
 import VideoCardSkeleton from "../Shimmer/VideoCardSkeleton";
 import ScrollToTopButton from "../ScrollToTopButton";
+import { useDispatch } from "react-redux";
+import { setClickedVideo } from "../../utils/slices/videoSlice";
 
 const VideoContainer = () => {
+  const dispatch = useDispatch();
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showVideoCard, setShowVideoCard] = useState(false);
@@ -74,8 +77,16 @@ const VideoContainer = () => {
     }
   };
 
+  const handleVideoClick = (v) => {
+    dispatch(setClickedVideo(v));
+  };
+
   const renderVideoCard = (v, idx) => (
-    <Link to={`/watch?vt=${v.id}`} key={`${v.id}-${idx}`}>
+    <Link
+      to={`/watch?vt=${v.id}`}
+      key={`${v.id}-${idx}`}
+      onClick={() => handleVideoClick(v)}
+    >
       {showVideoCard ? <VideoCard vInfo={v} /> : <VideoCardSkeleton />}
     </Link>
   );
@@ -87,10 +98,10 @@ const VideoContainer = () => {
           <Spinner />
         </>
       ) : videos.length > 0 ? (
-        <div className="grid grid-cols-3  sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-4  ">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-4  ">
           <AdPromoCard vInfo={videos[0]} />
 
-          {/* <AidVideoCard2WithStyles vInfo={videos[4]} /> */}
+          <AidVideoCard2WithStyles vInfo={videos[4]} />
 
           {videos.map(renderVideoCard)}
           <ScrollToTopButton />

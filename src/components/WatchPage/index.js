@@ -1,13 +1,12 @@
 import ReactPlayer from "react-player";
-import CommentsContainer from "../CommentsContainer";
+// import CommentsContainer from "../CommentsContainer";
 import SideVideo from "./WatchPageContainer/SideVideoContainer";
 import LiveChat from "../LiveChat";
 import VideoStates from "./WatchPageContainer/VideoStats";
 import VideoStatsSkeleton from "../Shimmer/VideoStatsSkeleton";
-
-import useWatch from "../../hooks/useWatch";
 import Comments from "../Comments";
 import ShimmerComment from "../Shimmer/ShimmerComment";
+import useWatch from "../../hooks/useWatch";
 
 const WatchPage = () => {
   const { filteredWatchVideo, searchParams } = useWatch();
@@ -31,9 +30,11 @@ const WatchPage = () => {
             }}
           />
         </div>
+
         {filteredWatchVideo.length === 0 ? (
           <div className="m-auto">
             <VideoStatsSkeleton />
+            <Comments id={getId} /> || <ShimmerComment />
           </div>
         ) : (
           <div>
