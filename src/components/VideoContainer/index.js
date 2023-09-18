@@ -98,9 +98,8 @@ const VideoContainer = () => {
           <Spinner />
         </>
       ) : videos.length > 0 ? (
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-4  ">
+        <div className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 ">
           <AdPromoCard vInfo={videos[0]} />
-
           <AidVideoCard2WithStyles vInfo={videos[4]} />
 
           {videos.map(renderVideoCard)}

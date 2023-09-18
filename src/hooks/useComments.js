@@ -5,7 +5,9 @@ const useComments = (id) => {
   const [comments, setComments] = useState(null);
   useEffect(() => {
     fetchComments();
-  }, []);
+    window.scrollTo({ top: 0 });
+  }, [id]);
+
   const fetchComments = async () => {
     try {
       const getData = await fetch(
