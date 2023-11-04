@@ -14,7 +14,7 @@ const useSideVideo = () => {
       const response = await getData.json();
 
       if (response?.items) {
-        const last25Items = response.items.slice(-25); // Get the last 25 items
+        const last25Items = response.items.slice(-45); // Get the last 25 items
         setSideVideo(last25Items);
         // setSideVideo(response.items);
       }

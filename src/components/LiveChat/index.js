@@ -8,7 +8,7 @@ import { BASE_IMAGE_URL, IMG_URL } from "../../config/constantAPI";
 
 const LiveChat = () => {
   const [inputChat, setInputChat] = useState("");
-  const [showChat, setShowChat] = useState(true);
+  const [showChat, setShowChat] = useState(false);
   const [randomThreeDigitNumber, setRandomThreeDigitNumber] = useState(312);
 
   const dispatch = useDispatch();

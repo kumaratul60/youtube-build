@@ -5,8 +5,8 @@ import {
   SEARCH_API_URL,
   YOUTUBE_SEARCH_API,
 } from "../config/constantAPI";
+import { closeMenu, toggleMenu } from "../utils/slices/appSlice";
 import { cacheResults, storeResponse } from "../utils/slices/searchSlice";
-import { toggleMenu } from "../utils/slices/appSlice";
 
 const useHeader = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -38,6 +38,7 @@ const useHeader = () => {
     return () => {
       clearTimeout(timer);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
 
   const fetchSearchResults = async () => {
@@ -72,6 +73,11 @@ const useHeader = () => {
   const hamburgerMenuHandler = () => {
     dispatch(toggleMenu());
   };
+
+  useEffect(() => {
+    // hiding sidebar intially for small screens
+    if (window.innerWidth < 768) dispatch(closeMenu());
+  }, [dispatch]);
 
   const handleSuggestionClick = (res) => {
     setSearchQuery(res);

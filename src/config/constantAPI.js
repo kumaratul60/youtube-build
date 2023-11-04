@@ -4,11 +4,16 @@ export const YOUTUBE_VIDEOS_API =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +
   GOOGLE_API_KEY;
 
+export const VIDEO_RECOMMENDATION_API = `https://www.googleapis.com/youtube/v3/activities?part=snippet%2CcontentDetails&maxResults=50&regionCode=in&key=${GOOGLE_API_KEY}&channelId=`;
+
 export const SEARCH_API_URL =
   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=";
 
 export const VIDEO_COMMENTS_URL =
-  "https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=50&videoId=";
+  "https://www.googleapis.com/youtube/v3/commentThreads?textFormat=plainText&part=snippet&maxResults=100&order=relevance&key=" +
+  GOOGLE_API_KEY +
+  "&videoId=";
+// "https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=50&videoId=";
 
 export const CHANNEL_API =
   "https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=";

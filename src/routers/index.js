@@ -1,39 +1,106 @@
+import { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
+import App from "../App";
 import Body from "../components/Body";
-import MainContainer from "../components/MainContainer";
-import WatchPage from "../components/WatchPage";
 import ChannelDetails from "../components/ChannelDetails";
-import SearchPage from "../components/SearchPage";
 import ErrorPage from "../components/Error";
 import HistoryPage from "../components/History";
+import MainContainer from "../components/MainContainer";
+import SearchPage from "../components/SearchPage";
+import WatchPage from "../components/WatchPage";
 
 const appRouter = createBrowserRouter([
+  // {
+  //   path: "/",
+  //   element: <Body />,
+  // children: [
+  //   {
+  //     path: "/",
+  //     element: <MainContainer />,
+  //   },
+  //   {
+  //     path: "/watch",
+  //     element: (
+  //       <Suspense>
+  //         <WatchPage />
+  //       </Suspense>
+  //     ),
+  //   },
+  //   {
+  //     path: "/channel/:channelId",
+  //     element: (
+  //       <Suspense>
+  //         <ChannelDetails />
+  //       </Suspense>
+  //     ),
+  //   },
+  //   {
+  //     path: "/results",
+  //     element: (
+  //       <Suspense>
+  //         <SearchPage />
+  //       </Suspense>
+  //     ),
+  //   },
+  //   {
+  //     path: "/history",
+  //     element: (
+  //       <Suspense>
+  //         <HistoryPage />
+  //       </Suspense>
+  //     ),
+  //   },
+  // ],
+  //   errorElement: <ErrorPage />,
+  // },
   {
     path: "/",
-    element: <Body />,
+    element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
-        element: <MainContainer />,
-      },
-      {
-        path: "/watch",
-        element: <WatchPage />,
-      },
-      {
-        path: "/channel/:channelId",
-        element: <ChannelDetails />,
-      },
-      {
-        path: "/results",
-        element: <SearchPage />,
-      },
-      {
-        path: "/history",
-        element: <HistoryPage />,
+        element: <Body />,
+        children: [
+          {
+            path: "/",
+            element: <MainContainer />,
+          },
+          {
+            path: "/watch",
+            element: (
+              <Suspense>
+                <WatchPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: "/channel/:channelId",
+            element: (
+              <Suspense>
+                <ChannelDetails />
+              </Suspense>
+            ),
+          },
+          {
+            path: "/results",
+            element: (
+              <Suspense>
+                <SearchPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: "/history",
+            element: (
+              <Suspense>
+                <HistoryPage />
+              </Suspense>
+            ),
+          },
+        ],
       },
     ],
-    errorElement: <ErrorPage />,
   },
 ]);
 

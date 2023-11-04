@@ -52,6 +52,11 @@ export const NEWS_ICON =
 export const SPORTS_ICON =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMZpUUphmOLPyc1kIHbBApEoc02-KCwTpX-i0kY2hGUGJz9oD62cwC1vfcvQ3H_aepSos&usqp=CAU";
 
+export const LIGHT_THEME =
+  "https://cdn3.iconfinder.com/data/icons/photography/512/Icon_19-512.png";
+export const DARK_THEME =
+  "https://static.thenounproject.com/png/2856492-200.png";
+
 // export const NOTIFICATION_ICON =
 
 export const CommentData = [
