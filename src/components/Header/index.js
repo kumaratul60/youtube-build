@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import {
-  DARK_THEME,
   HAMBURGER_MENU,
-  LIGHT_THEME,
   SEARCH_ICON,
   USER_ICON,
 } from "../../constants/constant";
@@ -38,7 +36,7 @@ const Header = () => {
   return (
     <>
       <div
-        className={`sticky top-0 left-0 w-full grid grid-flow-col p-2 m-2 shadow-lg ${
+        className={` grid grid-flow-col p-2 m-2 shadow-lg ${
           darkMode ? "bg-[#1F2937]" : "bg-white"
         }`}
       >
@@ -63,28 +61,30 @@ const Header = () => {
         </div>
 
         <div className="col-span-10">
-          <div className=" flex items-center justify-center mt-[-8px] md:mt-0">
-            <input
-              className="rounded-l-full p-2 pl-4 w-1/2 border border-sky-300 focus:outline-none focus:shadow-outline focus:border-2 focus:border-blue-500 shadow-sm text-gray-600 placeholder-gray-500"
-              type="text"
-              placeholder="Search"
-              value={searchQuery}
-              onChange={handleSearchQueryChange}
-              onFocus={handleShowSuggestions}
-              // onBlur={() => setShowSuggestions(false)}
-            />
-            <div className="rounded-r-full px-5 py-[8px]  md:py-[7px] border border-gray-500 cursor-pointer bg-gray-50">
-              <img className="h-6" src={SEARCH_ICON} alt="search-logo" />
+          <div className="sticky top-0 bg-white z-50">
+            <div className=" flex items-center justify-center mt-[-8px] md:mt-0">
+              <input
+                className="rounded-l-full p-2 pl-4 w-1/2 border border-sky-300 focus:outline-none focus:shadow-outline focus:border-2 focus:border-blue-500 shadow-sm text-gray-600 placeholder-gray-500"
+                type="text"
+                placeholder="Search"
+                value={searchQuery}
+                onChange={handleSearchQueryChange}
+                onFocus={handleShowSuggestions}
+                // onBlur={() => setShowSuggestions(false)}
+              />
+              <div className="rounded-r-full px-5 py-[8px]  md:py-[7px] border border-gray-500 cursor-pointer bg-gray-50">
+                <img className="h-6" src={SEARCH_ICON} alt="search-logo" />
+              </div>
             </div>
           </div>
           {showSuggestions && (
-            <div className="absolute bg-white w-full md:w-[38%] lg:w-[30%] p-3 rounded-lg py-2  mt-2 md:mt-0 md:ml-[14rem]  shadow-xl z-10 ">
+            <div className="absolute bg-white w-full md:w-[38%] lg:w-[30%] p-3 rounded-lg py-2  mt-2 md:mt-0 md:ml-[18rem]  shadow-xl z-10 ">
               {showSuggestions &&
                 searchResults.map((result, i) => (
                   <Link to={`/results?searchQuery=${result}`} key={i}>
                     <div
                       key={i}
-                      className="text-gray-900 font-semibold m-1 p-1 border-b flex hover:bg-gray-100 hove: rounded-lg "
+                      className="text-gray-900 font-semibold m-1 p-1 border-b flex hover:bg-gray-100 hover: rounded-lg "
                       onClick={() => handleSuggestionClick(result)}
                     >
                       <img
