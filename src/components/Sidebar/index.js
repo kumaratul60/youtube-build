@@ -1,7 +1,3 @@
-import React from "react";
-
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import {
   HISTORY_ICON,
   HOME_ICON,
@@ -16,7 +12,9 @@ import {
   TRENDING_ICON,
   WATCH_LATER_ICON,
   YOUR_VIDEO_ICON,
-} from "../../constants/constant";
+} from "constants/constant";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const SideBar = () => {
   const isMenuBarOpen = useSelector((state) => state.app.isMenuOpen);

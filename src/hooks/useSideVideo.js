@@ -1,5 +1,5 @@
+import { YOUTUBE_VIDEOS_API } from "config/constantAPI";
 import { useEffect, useState } from "react";
-import { YOUTUBE_VIDEOS_API } from "../config/constantAPI";
 
 const useSideVideo = () => {
   const [sideVideo, setSideVideo] = useState([]);

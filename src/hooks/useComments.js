@@ -1,5 +1,5 @@
+import { VIDEO_COMMENTS_URL } from "config/constantAPI";
 import { useEffect, useState } from "react";
-import { VIDEO_COMMENTS_URL } from "../config/constantAPI";
 
 const useComments = (id) => {
   const [comments, setComments] = useState(null);

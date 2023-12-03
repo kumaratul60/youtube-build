@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Statistic, formatDateDifference } from "../../../../utils/commonFn";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Statistic, formatDateDifference } from "utils/commonFn";
 
 const VideoStates = ({ statsInfo }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);

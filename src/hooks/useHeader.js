@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { closeMenu, toggleMenu } from "utils/slices/appSlice";
+import { cacheResults, storeResponse } from "utils/slices/searchSlice";
 import {
   GOOGLE_API_KEY,
   SEARCH_API_URL,
   YOUTUBE_SEARCH_API,
 } from "../config/constantAPI";
-import { closeMenu, toggleMenu } from "../utils/slices/appSlice";
-import { cacheResults, storeResponse } from "../utils/slices/searchSlice";
 
 const useHeader = () => {
   const [searchQuery, setSearchQuery] = useState("");

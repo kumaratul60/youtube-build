@@ -1,8 +1,8 @@
-import SearchVideoCard from "../SearchVideoCard";
-import { Link } from "react-router-dom";
-import VideoCardSkeleton from "../Shimmer/VideoCardSkeleton";
-import { setClickedVideo } from "../../utils/slices/videoSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { setClickedVideo } from "utils/slices/videoSlice";
+import SearchVideoCard from "../SearchVideoCard";
+import VideoCardSkeleton from "../Shimmer/VideoCardSkeleton";
 
 const SearchPage = () => {
   const dispatch = useDispatch();

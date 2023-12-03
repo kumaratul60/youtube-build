@@ -1,8 +1,8 @@
+import { YOUTUBE_VIDEOS_API } from "config/constantAPI";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import { closeMenu } from "../utils/slices/appSlice";
-import { YOUTUBE_VIDEOS_API } from "../config/constantAPI";
+import { closeMenu } from "utils/slices/appSlice";
 
 const useWatch = () => {
   const dispatch = useDispatch();

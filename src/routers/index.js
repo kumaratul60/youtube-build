@@ -1,13 +1,13 @@
+import App from "App";
+import Body from "components/Body";
+import ChannelDetails from "components/ChannelDetails";
+import ErrorPage from "components/Error";
+import HistoryPage from "components/History";
+import MainContainer from "components/MainContainer";
+import SearchPage from "components/SearchPage";
+import WatchPage from "components/WatchPage";
 import { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App";
-import Body from "../components/Body";
-import ChannelDetails from "../components/ChannelDetails";
-import ErrorPage from "../components/Error";
-import HistoryPage from "../components/History";
-import MainContainer from "../components/MainContainer";
-import SearchPage from "../components/SearchPage";
-import WatchPage from "../components/WatchPage";
 
 const appRouter = createBrowserRouter([
   // {

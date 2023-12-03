@@ -1,14 +1,10 @@
+import { HAMBURGER_MENU, SEARCH_ICON, USER_ICON } from "constants/constant";
 import { useEffect, useState } from "react";
-import {
-  HAMBURGER_MENU,
-  SEARCH_ICON,
-  USER_ICON,
-} from "../../constants/constant";
 
+import youtubelogoDarkMode from "assets/yt-logoDrakMode.png";
+import youtubelogoLightMode from "assets/yt-logoLightMode.png";
+import useHeader from "hooks/useHeader";
 import { Link } from "react-router-dom";
-import youtubelogoDarkMode from "../../assets/yt-logoDrakMode.png";
-import youtubelogoLightMode from "../../assets/yt-logoLightMode.png";
-import useHeader from "../../hooks/useHeader";
 
 const Header = () => {
   const {

@@ -1,10 +1,10 @@
+import { BASE_IMAGE_URL, IMG_URL } from "config/constantAPI";
+import { generateRandomName, makeRandomStr } from "helper/mockNames";
 import { useEffect, useState } from "react";
-import ChatMessage from "../ChatMessage";
 import { useDispatch, useSelector } from "react-redux";
-import { addMessage } from "../../utils/slices/chatSlice";
-import { generateRandomName, makeRandomStr } from "../../helper/mockNames";
-import { generateRandomThreeDigitNumber } from "../../utils/commonFn";
-import { BASE_IMAGE_URL, IMG_URL } from "../../config/constantAPI";
+import { generateRandomThreeDigitNumber } from "utils/commonFn";
+import { addMessage } from "utils/slices/chatSlice";
+import ChatMessage from "../ChatMessage";
 
 const LiveChat = () => {
   const [inputChat, setInputChat] = useState("");
@@ -40,7 +40,7 @@ const LiveChat = () => {
           name: "you",
           message: inputChat,
           // img: `${BASE_IMAGE_URL}${randomThreeDigitNumber}.jpg`,
-          img:IMG_URL
+          img: IMG_URL,
         })
       );
     }

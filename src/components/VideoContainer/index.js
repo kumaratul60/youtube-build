@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { YOUTUBE_VIDEOS_API } from "config/constantAPI";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { YOUTUBE_VIDEOS_API } from "../../config/constantAPI";
 
-import VideoCard, { AidVideoCard2WithStyles, aidVideoCard } from "../VideoCard";
-import Spinner from "../Spinner";
-import VideoCardSkeleton from "../Shimmer/VideoCardSkeleton";
-import ScrollToTopButton from "../ScrollToTopButton";
 import { useDispatch } from "react-redux";
-import { setClickedVideo } from "../../utils/slices/videoSlice";
+import { setClickedVideo } from "utils/slices/videoSlice";
+import ScrollToTopButton from "../ScrollToTopButton";
+import VideoCardSkeleton from "../Shimmer/VideoCardSkeleton";
+import Spinner from "../Spinner";
+import VideoCard, { AidVideoCard2WithStyles, aidVideoCard } from "../VideoCard";
 
 const VideoContainer = () => {
   const dispatch = useDispatch();

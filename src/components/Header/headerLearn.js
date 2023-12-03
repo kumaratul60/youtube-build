@@ -1,13 +1,13 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { YOUTUBE_SEARCH_API } from "config/constantAPI";
 import {
   HAMBURGER_MENU,
-  YOUTUBE_LOGO,
-  USER_ICON,
   SEARCH_ICON,
-} from "../../constants/constant";
+  USER_ICON,
+  YOUTUBE_LOGO,
+} from "constants/constant";
+import { useEffect, useMemo, useState } from "react";
 import { useDispatch } from "react-redux";
-import { toggleMenu } from "../../utils/slices/appSlice";
-import { YOUTUBE_SEARCH_API } from "../../config/constantAPI";
+import { toggleMenu } from "utils/slices/appSlice";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");

@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { formatDateDifference } from "../../utils/commonFn";
+import { formatDateDifference } from "utils/commonFn";
 
 const SearchVideoCard = ({ videoItem }) => {
   const { snippet } = videoItem;

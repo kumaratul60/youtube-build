@@ -1,12 +1,12 @@
 import ReactPlayer from "react-player";
 // import CommentsContainer from "../CommentsContainer";
-import SideVideo from "./WatchPageContainer/SideVideoContainer";
-import LiveChat from "../LiveChat";
-import VideoStates from "./WatchPageContainer/VideoStats";
-import VideoStatsSkeleton from "../Shimmer/VideoStatsSkeleton";
+import useWatch from "hooks/useWatch";
 import Comments from "../Comments";
+import LiveChat from "../LiveChat";
 import ShimmerComment from "../Shimmer/ShimmerComment";
-import useWatch from "../../hooks/useWatch";
+import VideoStatsSkeleton from "../Shimmer/VideoStatsSkeleton";
+import SideVideo from "./WatchPageContainer/SideVideoContainer";
+import VideoStates from "./WatchPageContainer/VideoStats";
 
 const WatchPage = () => {
   const { filteredWatchVideo, searchParams } = useWatch();

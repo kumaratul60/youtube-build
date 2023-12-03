@@ -1,9 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-  removeClickedVideo,
-  setClickedVideo,
-} from "../../utils/slices/videoSlice";
+import { removeClickedVideo, setClickedVideo } from "utils/slices/videoSlice";
 import SideCard from "../WatchPage/WatchPageContainer/SideCard";
 
 const HistoryPage = () => {
